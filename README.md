@@ -45,3 +45,9 @@ initials request
 trailer request
 clear 
 
+oct 10 approach adjustment
+
+initial route >>> movie search 
+movie list display >>>>
+movie detail display >>>>>
+movie trailer display 
