@@ -36,6 +36,10 @@ getting correct information from youtube api :tick
 to do 
 write function to check to see if in data base 
 combine both results 
+if (movieId) {return results from database }
+else {
+    make async calls aka 
+}
 send relevant info to client
 store in db 
 
