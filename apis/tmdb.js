@@ -1,7 +1,5 @@
 const KEY = "c26a39a5c6f1583ac7528dc2808421a5";
 const axios = require("axios");
-/// example request
-//https://api.themoviedb.org/3/movie/550?api_key=${KEY}
 
 const tmdb = async query => {
   const KEY = "c26a39a5c6f1583ac7528dc2808421a5";

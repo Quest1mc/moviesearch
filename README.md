@@ -33,7 +33,10 @@ get request from front end :tick
 console log query :tick
 
 
-use query to make 2 axios requests 
+use query to make 2 axios requests
+requesting to tmdb and getting an array of movies and id to use to retrieve video:tick 
+a bit of a challenge identifying the proper code on youtube docs to retrieve videos by id
+tempted to use a url hack however this will not provide any information from a youtube api call and this information is crucial to the app being abole to cache an aggregated object to memory for future use.
 
 use promise.all after async to combine both responses call set to make unique 
 store in database

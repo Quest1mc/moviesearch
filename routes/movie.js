@@ -7,8 +7,7 @@ const router = express.Router();
 const axios = require("axios");
 
 const tmdb = require("../apis/tmdb");
-
-
+const youtube = require("../apis/youtube");
 
 /* GET movie . */
 router.get("/", function(req, res, next) {
@@ -18,36 +17,7 @@ router.get("/", function(req, res, next) {
   tmdb(req.query);
 });
 
-
 module.exports = router;
 
-
-
-
-
-
-
-
-
-
-
-
-
-// possible code for video display 
-// const videoSrc= `https://www.youtube.com/embed/${video.id.videoId}`
-//     return (
-//         <div>
-//             <div className="ui embed">
-//                 <iframe title="video-player" src={videoSrc} ></iframe>
-//             </div>
-//             <div className="ui segment">
-//                 <h4 className= "ui header">{ video.snippet.title}</h4>
-//                 <p>
-//                 {video.snippet.description}
-//                 </p>
-//             </div>
-
-//         </div>
-//     )
 
 // you should have an array of matching items here
