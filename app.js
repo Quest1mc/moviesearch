@@ -44,18 +44,6 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-//This code below works as a unit test
-//  movie=async()=>{
-//   const KEY = 'c26a39a5c6f1583ac7528dc2808421a5'
-// await axios.get(
-//   `https://api.themoviedb.org/3/movie/550?api_key=${KEY}`
-  
-  
-// )
-// .then (res=>{
-// console.log( res.data);
-// })
-// }
-// movie()
+
 ;
 module.exports = app;

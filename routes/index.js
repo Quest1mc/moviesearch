@@ -8,4 +8,4 @@ router.get("/", function(req, res, next) {
 
 module.exports = router;
 
-// you should search for movies here
+// This is just an intro page for Express ...ignore it nothing to see here!

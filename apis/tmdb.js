@@ -1,6 +1,9 @@
-// const KEY = "c26a39a5c6f1583ac7528dc2808421a5";
-// test = https://api.themoviedb.org/3/search/movie?api_key=c26a39a5c6f1583ac7528dc2808421a5&language=en-US&query=lion king&page=1&include_adult=false
-const axios = require("axios");
+/* 
+ I have left this key here on purpose it expires in 7 days 
+ test = https://api.themoviedb.org/3/search/movie?api_key=c26a39a5c6f1583ac7528dc2808421a5&language=en-US&query=lion king&page=1&include_adult=false */
+
+
+ const axios = require("axios");
 
 const tmdb = async query => {
   const KEY = "c26a39a5c6f1583ac7528dc2808421a5";
