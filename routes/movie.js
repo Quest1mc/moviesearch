@@ -15,6 +15,7 @@ router.get("/", function(req, res, next) {
 
   //this works it gives an object with an array
   tmdb(req.query);
+  console.log(req.query);
 });
 
 module.exports = router;

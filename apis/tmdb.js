@@ -1,4 +1,4 @@
-const KEY = "c26a39a5c6f1583ac7528dc2808421a5";
+// const KEY = "c26a39a5c6f1583ac7528dc2808421a5";
 const axios = require("axios");
 
 const tmdb = async query => {
@@ -8,12 +8,13 @@ const tmdb = async query => {
       `https://api.themoviedb.org/3/search/movie?api_key=${KEY}&language=en-US&query=${query.query}&page=1&include_adult=false`
     )
     .then(res => {
+      console.log(res.data);
       const idMovImgArray = res.data.results.map(item => [
         item.id,
         item.poster_path,
         item.title
       ]);
-      console.log(idMovImgArray);
+       console.log(idMovImgArray);
     });
 };
 

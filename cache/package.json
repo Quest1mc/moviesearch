@@ -1,0 +1,14 @@
+{
+  "name": "cache",
+  "version": "1.0.0",
+  "description": "this is where all the cached objects reside",
+  "main": "index.js",
+  "scripts": {
+    "start":"json-server -p 5001 -w db.json"
+  },
+  "author": "Quest Stefan",
+  "license": "MIT",
+  "dependencies": {
+    "json-server": "^0.15.1"
+  }
+}
