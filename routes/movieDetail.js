@@ -1,43 +1,66 @@
 const express = require("express");
 const router = express.Router();
-// import { JsonDB } from 'node-json-db';
-// const { JsonDB } = require('node-json-db')
-// import { Config } from 'node-json-db/dist/lib/JsonDBConfig'
-// const { Config } = require('node-json-db/dist/lib/JsonDBConfig')
-// const db = new JsonDB(new Config("movieCache", true, false, '/'));
 
 const youtube = require("../apis/youtube");
 const tmdbDetail = require("../apis/tmdbDetail");
 const cache = require("../apis/cache");
-// const db = require('../db');
-// const fs = require('fs');
+const db = require("../cache/db");
 
 //this requires official title from tmdb call
 // this requires movie id from tmdb
-const AggregatedDetails = async () => {
+
+const isCached = async id => {
+  id = parseInt(id);
+  const result = db.movies.some(e => {
+    // console.log( e.id ===id);
+    return e.id === id;
+  });
+
+  if (db.movies.some(e => e.id === id)) {
+    console.log("this is true");
+    return true;
+    /* vendors contains the element we're looking for */
+  } else {
+    console.log("this is false");
+    return false;
+  }
+  // console.log (db.movies)
+};
+const AggregatedDetails = async (id, title) => {
   // const tmdb = tmdbDetail(550 = fight club )12580=izo 841 = dune
   // then((data)=> console.log(data));
-
-  const yout = await youtube("Dune");
-  const tmdbDet = await tmdbDetail(841);
-
+  const yout = await youtube(title);
+  const tmdbDet = await tmdbDetail(id);
   let jointObj = await { ...tmdbDet, ...yout };
-
   const pushToDb = await cache.post("/movies", jointObj);
 
   return jointObj;
 };
+//localhost:5000/movieDetail
+//`localhost:5001/movies/id=req.id,req.title`
+
 /* GET movie details */
 router.get("/", async function(req, res, next) {
-  await AggregatedDetails();
-  // .then(data=>console.log(data.items[0].id.videoId))
-  // .then(data=>console.log(data))
+  const id = parseInt(req.query.id);
+  const result = (await isCached(id))
+    ? await db.movies.filter(e => e.id === id)
+    : await AggregatedDetails(id, req.query.title);
 
-  // const checkDb =()=>{if (!title){
-  //   new Movie = (...movieDetails,...movieTrailer)
-  //  }}
+  // .catch(function(error) {
+  //   console.error(error);db.movies[req.query.id]
+  // });
+console.log('This preceeds the combined object which holds all the trailer and movie info', result)
+  // res.send(
+  //   await req.query.id === ( db.movies.id)
+  //     ? db.movies / req.query.id
+  //     : await AggregatedDetails(req.query.id, req.query.title)
+  // );
+  // console.log(req.query.id,req.query.title);
 
-  res.send("this is the actually trailer ");
+  // to test http:localhost:5000/movieDetail/id=req.query,req.title=req.query.title;
+  //  this works (console.log(await AggregatedDetails(req.query.id, req.query.title));)
+
+  res.send(result);
 });
 
 module.exports = router;

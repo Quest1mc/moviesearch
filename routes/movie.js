@@ -7,15 +7,12 @@ const router = express.Router();
 const axios = require("axios");
 
 const tmdb = require("../apis/tmdb");
-const youtube = require("../apis/youtube");
+// const youtube = require("../apis/youtube");
 
 /* GET movie . */
-router.get("/", function(req, res, next) {
-  res.send("a list of all movies matching the search");
+router.get("/", async function(req, res, next) {
+  res.send(await tmdb(req.query) );
 
-  //this works it gives an object with an array
-  tmdb(req.query);
-  console.log(req.query);
 });
 
 module.exports = router;
