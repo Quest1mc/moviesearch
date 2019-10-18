@@ -1,7 +1,7 @@
 # Welcome to my movie search App
 
 ## Goal 
-A backend app written with NodeJs that uses aggregated and caches movie details from 2 separate sources.
+A backend app written with NodeJs that uses aggregated data from 2 separate sources and caches movie details .
 it is run only in the backend but it is simple and straight forward.
 
 You will get best results with 'Yarn run dev'
@@ -11,6 +11,8 @@ it will also reload the program as needed.
 ## **Technologies used**
 for this are purely node js , javascript, express js &
 axios 
+
+
 *I used port 5000 and port 5001 but with a little tinkering it can be used anywhere.*
 
 ## ** Data Flow **
