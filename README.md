@@ -1,16 +1,20 @@
-#Welcome to my movie search App
+# Welcome to my movie search App
+
+## Goal 
+A backend app written with NodeJs that uses aggregated and caches movie details from 2 separate sources.
 it is run only in the backend but it is simple and straight forward.
+
 You will get best results with 'Yarn run dev'
 since this will start up the nodejs server and the database in the right sequence.
 it will also reload the program as needed. 
 
-##Technologies used
+## **Technologies used**
 for this are purely node js , javascript, express js &
 axios 
 *I used port 5000 and port 5001 but with a little tinkering it can be used anywhere.*
 
-##Data Flow 
-![GitHub Logo](/images/dataflow.png)
+## ** Data Flow **
+![Mind Map!](/images/dataflow.png)
 
 The logic of this as flows 
 you enter your query into /movie 
@@ -32,7 +36,7 @@ once the information has arrived it is aggregated and cached in a json-server
 so the next time you search for the same movie it will first check the database to see if it has the info before making any calls axios calls.
 
 
-##BELOW ARE SOME OF MY THOUGHTS WHILE PUTTING THIS PROJECT TOGETHER
+##  BELOW ARE SOME OF MY THOUGHTS WHILE PUTTING THIS PROJECT TOGETHER 
 
 Using read me as a rough guide to get though the requirements 
 
@@ -57,7 +61,7 @@ step 7 ensure client can call video trailer using url
 
 
 
-#further breakdown 
+#  further breakdown 
 set up express server :tick
 
 get request from front end :tick
