@@ -15,7 +15,7 @@ axios
 
 ## ** Data Flow **
 
-![alt text](https://github.com/Quest1mc/moviesearch/raw/master/public/images/dataflow.png "Data Flow image")
+![alt text](https://github.com/Quest1mc/moviesearch/blob/master/public/images/dataflow.png "Data Flow image")
 
 
 The logic of this as flows 
