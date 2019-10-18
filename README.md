@@ -14,8 +14,9 @@ axios
 *I used port 5000 and port 5001 but with a little tinkering it can be used anywhere.*
 
 ## ** Data Flow **
-[Mind Map]
-[Mind Map]:https://github.com/Quest1mc/moviesearch/public/images/dataflow.png 
+
+![alt text](https://github.com/Quest1mc/moviesearch/raw/master/public/images/dataflow.png "Data Flow image")
+
 
 The logic of this as flows 
 you enter your query into /movie 
