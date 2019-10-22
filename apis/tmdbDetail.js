@@ -7,7 +7,6 @@ const tmdbDetail = async movieId => {
       `https://api.themoviedb.org/3/movie/${movieId}?api_key=${KEY}&include_adult=false&append_to_response=videos`
     )
     .then(res => {
-      // console.log(res.data);
       return res.data;
     });
 };
