@@ -9,7 +9,7 @@
     "dev": "concurrently -k \"yarn run server\" \"nodemon\" "
   },
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "concurrently": "^5.0.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
